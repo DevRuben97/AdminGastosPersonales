@@ -8,18 +8,19 @@ export default function InitialForm(props){
 
     const [Errors, SetErros]= useState(true);
     const [Presupuesto,SetPresupuesto]= useState(0);
-
+    const [MoneyEnd, SetMoneyEnd]= useState(props.Finishedmoney);
 
 
     useEffect(()=>{
 
-        if (props.Finishedmoney){
+        if (MoneyEnd){
             Swal.fire({
                 title: 'Se ha terminado tu dinero, introduce un nuevo presupuesto',
                 type: 'warning'
             });
+            SetMoneyEnd(false);
         }
-    })
+    },[MoneyEnd])
 
 
     const HandleChange= event=>{

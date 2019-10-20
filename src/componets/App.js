@@ -76,7 +76,7 @@ export default function App(){
   }
 
   //Render:
-  if (Presupuesto.Restante=== 0){
+  if (Presupuesto.Restante<= 0){
     return (
       <div className= "App container">
        <Header Title="Introduce tu presupuesto inicial"></Header>
