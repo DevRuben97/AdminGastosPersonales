@@ -77,17 +77,23 @@ export default function App(){
 
   //Render:
   if (Presupuesto.Restante<= 0){
+
+
+    const Title= Presupuesto.Restante===0 && Presupuesto.Actual? 'Ingresa un nuevo presupuesto': 'Introduce tu presupuesto inicial';
+    const Finishedmoney= Presupuesto.Restante===0 && Presupuesto.Actual? true: false;
+
     return (
       <div className= "App container">
-       <Header Title="Introduce tu presupuesto inicial"></Header>
+       <Header Title={Title}></Header>
 
        <div className="contenido-principal contenido">
-          <InitialForm ChangePresupuesto={ChangePresupuesto} Finishedmoney={Presupuesto.Restante===0 && Presupuesto.Actual>0? true: false}></InitialForm>
+          <InitialForm ChangePresupuesto={ChangePresupuesto} Finishedmoney={Finishedmoney}></InitialForm>
        </div>
       </div>
     )
   }
   else{
+    
     return (
       <div className="App container">
         <Header

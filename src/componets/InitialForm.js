@@ -26,6 +26,8 @@ export default function InitialForm(props){
     const HandleChange= event=>{
         SetPresupuesto(Number.parseInt(event.target.value));
         SetErros(Presupuesto<= 0? true: false);
+        console.log(Presupuesto);
+
     }
 
     const SendPresupuesto= (event)=>{
